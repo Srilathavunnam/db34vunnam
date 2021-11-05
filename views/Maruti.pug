@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+  - var results = [{"color":"Red", "quality":"Best","Rate":8000},{"color":"Green","quality":"Good","Rate":5000},{"color":"Golden","quality":"bad","Rate":1500}]
+       div(class="container-fluid")
+         div(class="row")
+            each value,index in results
+              div(class="col-sm-2" onClick=`buy(${index})`)
+                p #{value.color}
+                p #{value.quality}
+                p #{value.Rate}
+
+
+
+
+
+                    script.
+                     function  buy(w){
+
+                        alert(`You purchased item ${w+1}.`)
+
+                     }
+
