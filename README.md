@@ -1,5 +1,5 @@
 # fwb34vunnam
-hosted at "https://srilathaserver4.herokuapp.com/"
+hosted at "https://db34vunnam.herokuapp.com/"
 class MarutiSuzuki
 attributes:
 win(number),
