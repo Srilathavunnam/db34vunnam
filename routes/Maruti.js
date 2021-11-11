@@ -1,9 +1,7 @@
-var express = require('express');
+var express = require("express");
+const Maruti_controlers = require("../controllers/Maruti");
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('Maruti', { title: 'Search Results by Maruti Suzuki' });
-});
-
+/* GET restaurants */
+router.get("/", Maruti_controlers.Maruti_view_all_Page);
 module.exports = router;
