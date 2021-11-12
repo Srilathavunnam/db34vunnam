@@ -30,10 +30,19 @@ exports.Maruti_view_all_Page = async function (req, res) {
 
  
 // for a specific Maruti. 
-exports.Maruti_detail = function(req, res) { 
-    res.send('NOT IMPLEMENTED: Maruti detail: ' + req.params.id); 
+exports.Maruti_detail = async function(req, res) { 
+    console.log("detail" + req.params.id)
+    try {
+        result = await Maruti.findById( req.params.id)
+        res.send(result)
+        }catch (error) {
+            res.status(500)
+            res.send(`{"error": document for id ${req.params.id} not found`);
+            }
+
+     
 }; 
- 
+  
 
  
 // Handle Maruti delete form on DELETE. 
@@ -65,4 +74,5 @@ exports.Maruti_create_post = async function(req, res) {
         res.status(500); 
         res.send(`{"error": ${err}}`); 
     }   
+  
 }; 
